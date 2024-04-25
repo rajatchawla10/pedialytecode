@@ -5,6 +5,7 @@ header .nav-wrapper {
   z-index: 2;
   position: fixed;
   padding-top: 10px;
+  border-bottom: 1px solid darkblue;
 }
 
 header nav {
@@ -20,7 +21,7 @@ header nav {
   height: var(--nav-height);
   padding: 0 2rem;
   font-family: var(--body-font-family);
-  /* border-bottom: 2px solid black; */
+  border-bottom: 2px solid darkblue;
 }
 
 header nav[aria-expanded="true"] {
@@ -156,11 +157,12 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  padding-top: 5px;
   /*background: red; /* Assuming you're using this for testing */ 
 }
 
 header nav .nav-brand img {
-  width: 140px;
+  width: 160px;
   height: auto;
 }
 
@@ -172,7 +174,7 @@ header nav .nav-sections {
   display: none;
   visibility: hidden;
   background-color: white;
-  border-top: 2px solid black;
+  /*border-top: 2px solid black; */
   padding-top: 5px;
   padding-bottom: 5px;
 }
