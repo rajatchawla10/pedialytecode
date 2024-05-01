@@ -1,20 +1,18 @@
-
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
   z-index: 2;
   position: fixed;
-  padding-top: 10px;
+  padding-top: 4rem;
 }
-
 
 header nav {
   box-sizing: border-box;
   display: grid;
   grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
+    "hamburger brand tools" var(--nav-height)
+    "sections sections sections" 1fr / auto 1fr auto;
   align-items: center;
   gap: 0 2em;
   margin: 0 auto;
@@ -27,16 +25,9 @@ header nav {
 header nav[aria-expanded="true"] {
   display: grid;
   grid-template:
-  'brand tools' var(--nav-height)
-  'sections sections' 1fr /
-  auto 1fr;
-  align-items: center;
-  gap: 0 2em;
-  margin: auto;
-  width: 75%;
-  height: var(--nav-height);
-  padding: 0 1rem;
-  font-family: var(--body-font-family);
+    "hamburger brand" var(--nav-height)
+    "sections sections" 1fr
+    "tools tools" var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100vh;
   position: relative;
@@ -51,13 +42,15 @@ header nav[aria-expanded="true"]::after {
   height: 1px; /* Thickness of the line */
   position: absolute;
   left: 50%; /* Center the line */
-  transform: translateX(-50%); /* Aligns the center of the element with the center of the nav */
+  transform: translateX(
+    -50%
+  ); /* Aligns the center of the element with the center of the nav */
   bottom: -49px; /* Position the line just below the nav */
   border-top: 1px solid darkblue;
   background-color: white; /* Set the background color to white */
   box-shadow: 0 8px 10px rgb(0 0 0 / 10%); /* Add a subtle blur shadow below */
   padding-top: 48px; /* Additional padding to simulate a 'background area' */
-  z-index: 2
+  z-index: 2;
 }
 
 @media (width >= 600px) {
@@ -119,7 +112,7 @@ header nav .nav-hamburger-icon::after {
 
 header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
-  content: '';
+  content: "";
   position: absolute;
   background: currentcolor;
 }
@@ -183,7 +176,6 @@ header nav .nav-brand img {
   height: auto;
 }
 
-
 /* sections */
 header nav .nav-sections {
   grid-area: sections;
@@ -205,7 +197,7 @@ header nav[aria-expanded="true"] .nav-sections {
   width: 100%;
 }
 
-header nav .nav-sections ul  {
+header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
   font-size: var(--body-font-size-s);
@@ -224,13 +216,11 @@ header nav .nav-sections ul > li > ul > li {
   font-weight: 500;
 }
 
-
 header nav .nav-sections .default-content-wrapper ul li:last-child {
   background-color: rgb(25 25 113 / 0%); /* Example background color */
   color: white;
   padding: 5px;
 }
-
 
 @media (width >= 900px) {
   header nav .nav-sections {
@@ -250,10 +240,10 @@ header nav .nav-sections .default-content-wrapper ul li:last-child {
   }
 
   header nav .nav-sections .nav-drop::after {
-    content: '';
+    content: "";
     display: inline-block;
     position: absolute;
-    top: .5em;
+    top: 0.5em;
     right: 2px;
     transform: rotate(135deg);
     width: 6px;
@@ -265,7 +255,7 @@ header nav .nav-sections .default-content-wrapper ul li:last-child {
 
   header nav .nav-sections .nav-drop[aria-expanded="true"]::after {
     top: unset;
-    bottom: .5em;
+    bottom: 0.5em;
     transform: rotate(315deg);
   }
 
@@ -287,7 +277,13 @@ header nav .nav-sections .default-content-wrapper ul li:last-child {
     position: relative;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded="true"] > ul {
+  header
+    nav
+    .nav-sections
+    .default-content-wrapper
+    > ul
+    > li[aria-expanded="true"]
+    > ul {
     display: block;
     position: absolute;
     left: -1em;
@@ -299,7 +295,7 @@ header nav .nav-sections .default-content-wrapper ul li:last-child {
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -8px;
     left: 8px;
@@ -308,7 +304,6 @@ header nav .nav-sections .default-content-wrapper ul li:last-child {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-bottom: 8px solid var(--light-color);
-    
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
