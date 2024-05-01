@@ -195,7 +195,7 @@ header nav .nav-sections {
   background-color: white;
   width: 100%;
   z-index: 3;
-  font-family: brandon, sans-serif;
+  font-family: brandon-bold, sans-serif;
 }
 
 header nav[aria-expanded="true"] .nav-sections {
@@ -224,9 +224,9 @@ header nav .nav-sections ul > li > ul > li {
   font-weight: 500;
 }
 
-
-header nav .nav-sections .default-content-wrapper ul li:last-child {
-  background-color: rgb(25 25 113 / 0%); /* Example background color */
+/** NAVIGATION ITEMS UL LIST */
+header nav .nav-sections .default-content-wrapper > ul > li:last-child {
+  background-color: rgb(25, 25, 113); /* Example background color */
   color: white;
   padding: 5px;
 }
@@ -243,6 +243,7 @@ header nav .nav-sections .default-content-wrapper ul li:last-child {
     align-self: unset;
   }
 
+  /** For items that have a drop down **/
   header nav .nav-sections .nav-drop {
     position: relative;
     padding-right: 16px;
@@ -263,11 +264,6 @@ header nav .nav-sections .default-content-wrapper ul li:last-child {
     border-width: 2px 2px 0 0;
   }
 
-  header nav .nav-sections .nav-drop[aria-expanded="true"]::after {
-    top: unset;
-    bottom: .5em;
-    transform: rotate(315deg);
-  }
 
   header nav .nav-sections ul {
     display: flex;
@@ -276,6 +272,7 @@ header nav .nav-sections .default-content-wrapper ul li:last-child {
     font-size: var(--body-font-size-xs);
   }
 
+  /** INDIVIDUAL NAV ITEMS */
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: relative;
@@ -287,6 +284,7 @@ header nav .nav-sections .default-content-wrapper ul li:last-child {
     position: relative;
   }
 
+  /** The actual block that is diplayed when clicked on nav item*/
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded="true"] > ul {
     display: block;
     position: absolute;
@@ -294,22 +292,17 @@ header nav .nav-sections .default-content-wrapper ul li:last-child {
     width: 200px;
     margin-top: 12px;
     padding: 1em;
-    background-color: var(--light-color);
+    background-color: white;
     white-space: initial;
+    font-family: brandon-normal, sans-serif;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 8px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
-    
+  /** Adds a solid line underneath the nav item when selected */
+  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded="true"] {
+    border-bottom: 3px solid black; /* Adjust color and thickness as needed */
   }
+
+
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;

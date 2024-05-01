@@ -18,14 +18,14 @@
 
 /** Custom Font used by Pedialyte (Licensing might be needed) */
 @font-face {
-  font-family: brandon;
+  font-family: brandon-normal;
   font-style: normal;
   font-weight: normal;
   src: url('../fonts/Brandon_regular.otf') format('opentype');
 }
 
 @font-face {
-  font-family: brandon;
+  font-family: brandon-bold;
   font-style: bold;
   font-weight: normal;
   src: url('../fonts/Brandon_bold.otf') format('opentype');

@@ -119,6 +119,14 @@ export default async function decorate(block) {
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+      if (isDesktop.matches) {
+        navSection.addEventListener('mouseenter', () => {
+          navSection.setAttribute('aria-expanded', 'true');
+        });
+        navSection.addEventListener('mouseleave', () => {
+          navSection.setAttribute('aria-expanded', 'false');
+        });
+      }
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
@@ -128,6 +136,26 @@ export default async function decorate(block) {
       });
     });
   }
+
+  // Listen for changes in the viewport size to add or remove hover listeners
+  isDesktop.addEventListener('change', (e) => {
+    const navItems = document.querySelectorAll('.nav-sections .default-content-wrapper > ul > li');
+    if (e.matches) { // It is now desktop size
+      navItems.forEach((navItem) => { // Add parentheses around navItem
+        navItem.addEventListener('mouseenter', () => {
+          navItem.setAttribute('aria-expanded', 'true');
+        });
+        navItem.addEventListener('mouseleave', () => {
+          navItem.setAttribute('aria-expanded', 'false');
+        });
+      });
+    } else { // It is now mobile size
+      navItems.forEach((navItem) => { // Add parentheses around navItem
+        navItem.removeEventListener('mouseenter');
+        navItem.removeEventListener('mouseleave');
+      });
+    }
+  });
 
   // hamburger for mobile
   const hamburger = document.createElement('div');
