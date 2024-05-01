@@ -55,7 +55,7 @@ header nav[aria-expanded="true"]::after {
   bottom: -49px; /* Position the line just below the nav */
   border-top: 1px solid darkblue;
   background-color: white; /* Set the background color to white */
-  box-shadow: 0 8px 10px rgb(0 0 0 / 0.1); /* Add a subtle blur shadow below */
+  box-shadow: 0 8px 10px rgb(0 0 0 / 10%); /* Add a subtle blur shadow below */
   padding-top: 48px; /* Additional padding to simulate a 'background area' */
   z-index: 2
 }
@@ -226,7 +226,7 @@ header nav .nav-sections ul > li > ul > li {
 
 
 header nav .nav-sections .default-content-wrapper ul li:last-child {
-  background-color: rgb(25 25 113 / 0); /* Example background color */
+  background-color: rgb(25 25 113 / 0%); /* Example background color */
   color: white;
   padding: 5px;
 }
