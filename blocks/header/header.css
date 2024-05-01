@@ -1,10 +1,13 @@
+
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
   z-index: 2;
   position: fixed;
+  padding-top: 10px;
 }
+
 
 header nav {
   box-sizing: border-box;
@@ -14,20 +17,47 @@ header nav {
     'sections sections sections' 1fr / auto 1fr auto;
   align-items: center;
   gap: 0 2em;
-  margin: auto;
-  max-width: 1264px;
+  margin: 0 auto;
+  width: 70%;
   height: var(--nav-height);
-  padding: 0 1rem;
+  padding: 0 2rem;
   font-family: var(--body-font-family);
 }
 
 header nav[aria-expanded="true"] {
+  display: grid;
   grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
+  'brand tools' var(--nav-height)
+  'sections sections' 1fr /
+  auto 1fr;
+  align-items: center;
+  gap: 0 2em;
+  margin: auto;
+  width: 75%;
+  height: var(--nav-height);
+  padding: 0 1rem;
+  font-family: var(--body-font-family);
   overflow-y: auto;
   min-height: 100vh;
+  position: relative;
+}
+
+/* LINE BELOW */
+
+header nav[aria-expanded="true"]::after {
+  content: "";
+  display: block;
+  width: 100vw; /* Ensures the line is viewport-wide, regardless of the nav's width */
+  height: 1px; /* Thickness of the line */
+  position: absolute;
+  left: 50%; /* Center the line */
+  transform: translateX(-50%); /* Aligns the center of the element with the center of the nav */
+  bottom: -49px; /* Position the line just below the nav */
+  border-top: 1px solid darkblue;
+  background-color: white; /* Set the background color to white */
+  box-shadow: 0 8px 10px rgb(0 0 0 / 10%); /* Add a subtle blur shadow below */
+  padding-top: 48px; /* Additional padding to simulate a 'background area' */
+  z-index: 2
 }
 
 @media (width >= 600px) {
@@ -145,12 +175,14 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  padding-top: 5px;
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 160px;
   height: auto;
 }
+
 
 /* sections */
 header nav .nav-sections {
@@ -158,13 +190,19 @@ header nav .nav-sections {
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
-  background-color: var(--overlay-color);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: white;
+  width: 100%;
+  z-index: 3;
+  font-family: brandon, sans-serif;
 }
 
 header nav[aria-expanded="true"] .nav-sections {
   display: block;
   visibility: visible;
   align-self: start;
+  width: 100%;
 }
 
 header nav .nav-sections ul  {
@@ -185,6 +223,14 @@ header nav .nav-sections ul > li > ul {
 header nav .nav-sections ul > li > ul > li {
   font-weight: 500;
 }
+
+
+header nav .nav-sections .default-content-wrapper ul li:last-child {
+  background-color: rgb(25 25 113 / 0%); /* Example background color */
+  color: white;
+  padding: 5px;
+}
+
 
 @media (width >= 900px) {
   header nav .nav-sections {
@@ -262,6 +308,7 @@ header nav .nav-sections ul > li > ul > li {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-bottom: 8px solid var(--light-color);
+    
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
@@ -272,4 +319,30 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  justify-self: end;
+  width: 50%;
+}
+
+.nav-tools .default-content-wrapper {
+  display: flex; /* Align children side by side */
+  justify-content: space-between; /* Space out the children */
+  align-items: center; /* Align children vertically in the middle */
+  width: 40%; /* Ensure the wrapper takes up the full width of its parent */
+}
+
+.nav-tools .default-content-wrapper > p {
+  display: flex; /* Makes the <p> a flex container to align the icon */
+  justify-content: flex-end; /* Aligns the icon to the right */
+  flex-grow: 0; /* Prevents the paragraph from growing */
+  padding: 0; /* Optional padding */
+}
+
+/* Ensure the icon itself does not have any flex properties that might affect this layout */
+.nav-tools .icon-search {
+  padding-left: 20px;
+}
+
+.nav-tools .default-content-wrapper picture img {
+  width: 150px;
+  height: 40px;
 }
