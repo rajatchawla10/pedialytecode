@@ -2,7 +2,8 @@ footer {
   padding: 2rem;
   font-size: var(--body-font-size-s);
   color: white;
-  background-color: rgb(21 2 61 / 100%)
+  background-color: rgb(21 2 61 / 100%);
+  font-family: brandon-normal, sans-serif;
 }
 
 footer .footer {
@@ -12,4 +13,46 @@ footer .footer {
 
 footer .footer p {
   margin: 0;
+}
+
+
+footer .block > div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* This creates five equal columns */
+  grid-template-rows: auto auto auto; /* Three rows */
+  gap: 1rem; /* Space between grid items */
+}
+
+/* First row: five sections */
+footer .block > div > div:nth-child(-n+5) {
+  grid-column: span 1; /* Each takes up one column */
+}
+
+/* Second row: footer-logo and footer-socials */
+footer .block > div > .footer-logo {
+  grid-column: span 2; /* Takes up two columns */
+}
+
+footer .block > div > .footer-socials {
+  grid-column: span 3; /* Takes up three columns to balance the space */
+}
+
+
+.footer-socials img {
+  width: 25px;
+  height: 25px;
+}
+
+.footer-logo img {
+  width: 200px;
+  height: 80px;
+}
+
+/* Third row: footer-smallprint */
+footer .block > div > .footer-smallprint:first-of-type {
+  grid-column: span 1; /* Takes up half the space */
+}
+
+footer .block > div > .footer-smallprint:last-of-type {
+  grid-column: span 4; /* Takes up the remaining space */
 }
