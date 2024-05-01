@@ -1,0 +1,51 @@
+.cards-custom > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20rem;
+  text-align: center;
+  padding: 5px 25px;
+  h3 {
+    font-size: 1.375rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.0625rem;
+    color: #211645;
+    padding-bottom: 18px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 100;
+  }
+
+  .button-container > a {
+    background-color: #211645;
+    border-radius: 4px;
+    font-weight: normal;
+    transition: 0.3s;
+    &:hover {
+      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.662642);
+      transition: 0.3s;
+    }
+  }
+}
+
+.card-image {
+  padding: 1rem 0;
+  width: 100%;
+  max-width: 80px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.card-body {
+}
