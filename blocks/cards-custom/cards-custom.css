@@ -31,6 +31,11 @@
     background-color: #211645;
     border-radius: 4px;
     font-weight: normal;
+    transition: 0.3s;
+    &:hover {
+      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.662642);
+      transition: 0.3s;
+    }
   }
 }
 
