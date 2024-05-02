@@ -3,6 +3,19 @@
   flex-direction: column;
 }
 
+.columns {
+  p.button-container > a {
+    background-color: #211645;
+    font-size: 1rem;
+    padding: 7px 22px;
+    transition: 0.3s;
+    &:hover {
+      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.662642);
+      transition: 0.3s;
+    }
+  }
+}
+
 .columns img {
   width: 100%;
 }
