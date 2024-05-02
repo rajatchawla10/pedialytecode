@@ -1,9 +1,9 @@
 footer {
   padding: 2rem;
-  font-size: var(--body-font-size-s);
   color: white;
-  background-color: rgb(21 2 61 / 100%);
+  background-color: #190a55;
   font-family: brandon-normal, sans-serif;
+  font-size: small;
 }
 
 footer .footer {
@@ -15,26 +15,75 @@ footer .footer p {
   margin: 0;
 }
 
-
 footer .block > div {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* This creates five equal columns */
-  grid-template-rows: auto auto auto; /* Three rows */
-  gap: 1rem; /* Space between grid items */
+  grid-template-columns: repeat(5, 1fr); /* Originally 5 equal columns for the first row */
+  grid-template-rows: repeat(3, auto); /* Defines three rows */
+  gap: 3rem; /* Space between grid items */
+  position: relative;
 }
 
+footer .block > div::after {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 65%; /* Positions the line right below the first row */
+  border-top: 1px solid #4b2eb4; /* Creates the line as a top border of the pseudo-element */
+  width: 100%; /* Ensures the line spans the full width of the grid container */
+}
 /* First row: five sections */
 footer .block > div > div:nth-child(-n+5) {
+  grid-row: 1; /* Forces into the first row */
   grid-column: span 1; /* Each takes up one column */
+  padding: 5px;
 }
 
-/* Second row: footer-logo and footer-socials */
+/* Second and third row column configuration */
+/* Adjusting for a 2-column layout in the second and third rows */
+footer .block > div > .footer-logo,
+footer .block > div > .footer-socials,
+footer .block > div > .footer-smallprint:first-of-type,
+footer .block > div > .footer-smallprint:last-of-type {
+  grid-column: span 5; /* Span across all 5 initial columns */
+}
+
+/* Specific adjustments for second and third rows to create 2 columns */
 footer .block > div > .footer-logo {
-  grid-column: span 2; /* Takes up two columns */
+  grid-row: 2;
+  grid-column: 1 / span 3; /* Takes up the first 3/5 of the row */
 }
 
 footer .block > div > .footer-socials {
-  grid-column: span 3; /* Takes up three columns to balance the space */
+  grid-row: 2;
+  grid-column: 4 / span 2; /* Takes up the last 2/5 of the row, moving it to the extreme right */
+  font-size: medium;
+}
+
+footer .block > div > .footer-socials > .default-content-wrapper {
+  display: flex; /* Activates Flexbox for direct children */
+  justify-content: center; /* Centers items horizontally within the container */
+  align-items: center; /* Centers items vertically */
+  gap: 10px; /* Optional: adds space between child elements */
+}
+
+
+
+footer .block > div > .footer-smallprint:first-of-type {
+  grid-row: 3;
+  grid-column: 1 / span 3; /* First print in the left 3/5 of the row */
+}
+
+footer .block > div > .footer-smallprint:last-of-type {
+  grid-row: 3;
+  grid-column: 4 / span 2; /* Second print in the right 2/5 of the row */
+}
+
+
+footer .block > div > .footer-smallprint > .default-content-wrapper {
+  display: flex; /* Activates Flexbox for direct children */
+  gap: 15px; /* Optional: adds space between child elements */
+  font-size: x-small;
 }
 
 
@@ -44,15 +93,6 @@ footer .block > div > .footer-socials {
 }
 
 .footer-logo img {
-  width: 200px;
-  height: 80px;
-}
-
-/* Third row: footer-smallprint */
-footer .block > div > .footer-smallprint:first-of-type {
-  grid-column: span 1; /* Takes up half the space */
-}
-
-footer .block > div > .footer-smallprint:last-of-type {
-  grid-column: span 4; /* Takes up the remaining space */
+  width: 130px;
+  height: 35px;
 }
