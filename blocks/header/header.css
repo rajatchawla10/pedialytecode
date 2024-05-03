@@ -87,6 +87,197 @@ header nav a:any-link {
   color: currentcolor;
 }
 
+
+/* brand */
+header .nav-brand {
+  grid-area: brand;
+  flex-basis: 128px;
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  line-height: 1;
+  padding-top: 5px;
+}
+
+header nav .nav-brand img {
+  width: 160px;
+  height: auto;
+}
+
+/* sections */
+header nav .nav-sections {
+  grid-area: sections;
+  flex: 1 1 auto;
+  display: none;
+  visibility: hidden;
+  padding: 0;
+  background-color: white;
+  width: 100%;
+  z-index: 3;
+  font-family: brandon-bold, sans-serif;
+}
+
+header nav[aria-expanded="true"] .nav-sections {
+  display: block;
+  visibility: visible;
+  align-self: start;
+  width: 100%;
+}
+
+header nav .nav-sections ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1em;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+}
+
+header nav .nav-sections ul > li {
+  padding: 0 10px;
+}
+
+header nav .nav-sections ul > li > a {
+  color: currentColor; /* Sets the color of the links */
+  text-decoration: none; /* Removes underline from links */
+}
+
+
+header nav .nav-sections ul > li > ul {
+  margin-top: 0;
+}
+
+header nav .nav-sections ul > li > ul > li {
+  font-weight: 500;
+}
+
+/** NAVIGATION ITEMS UL LIST */
+header nav .nav-sections .default-content-wrapper > ul > li:last-child {
+  background-color: rgb(25, 25, 113); /* Example background color */
+  color: white;
+  padding: 5px;
+}
+
+@media (width >= 900px) {
+  header nav .nav-sections {
+    display: block;
+    visibility: visible;
+    white-space: nowrap;
+  }
+
+  header nav[aria-expanded="true"] .nav-sections {
+    align-self: unset;
+  }
+
+  /** For items that have a drop down **/
+  header nav .nav-sections .nav-drop {
+    position: relative;
+    padding-right: 16px;
+    cursor: pointer;
+  }
+
+  /** ARROW DOWN*/
+  header nav .nav-sections .nav-drop::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0.5em;
+    right: 2px;
+    transform: rotate(135deg);
+    width: 6px;
+    height: 6px;
+    border: 2px solid currentcolor;
+    border-radius: 0 1px 0 0;
+    border-width: 2px 2px 0 0;
+  }
+
+
+  header nav .nav-sections ul {
+    display: flex;
+    gap: 2em;
+    margin: 0;
+    font-size: var(--body-font-size-xs);
+  }
+
+  /** INDIVIDUAL NAV ITEMS */
+  header nav .nav-sections .default-content-wrapper > ul > li {
+    flex: 0 1 auto;
+    position: relative;
+    font-weight: 500;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul {
+    display: none;
+    position: relative;
+  }
+
+  /** The actual block that is diplayed when clicked on nav item*/
+  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded="true"] > ul {
+    display: block;
+    position: absolute;
+    left: -1em;
+    width: auto; /* Allow width to adjust based on content */
+    min-width: 200px; /* Minimum width of each column */
+    max-width: 600px; /* Maximum total width of dropdown */
+    margin-top: 12px;
+    padding: 1em;
+    background-color: white;
+    white-space: nowrap; /* Ensures text does not wrap */
+    font-family: brandon-normal, sans-serif;
+    column-count: auto; /* Browser will adjust the column count based on content */
+    column-gap: 20px; /* Space between columns */
+    column-fill: balance; /* Balances items across columns */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds shadow for better visibility */
+}
+
+  /** Submenu styling when items are hovered */
+  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded="true"] > ul > li:hover {
+    background-color: rgb(25, 25, 113); /* Change the background color to blue on hover */
+    color: white; /* Change the text color to white on hover */
+  }
+
+  /** Adds a solid line underneath the nav item when selected */
+  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded="true"] {
+    border-bottom: 3px solid black; /* Adjust color and thickness as needed */
+  }
+
+
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
+    padding: 8px 0;
+  }
+}
+
+/* tools */
+header nav .nav-tools {
+  grid-area: tools;
+  justify-self: end;
+  width: 50%;
+}
+
+.nav-tools .default-content-wrapper {
+  display: flex; /* Align children side by side */
+  justify-content: space-between; /* Space out the children */
+  align-items: center; /* Align children vertically in the middle */
+  width: 40%; /* Ensure the wrapper takes up the full width of its parent */
+}
+
+.nav-tools .default-content-wrapper > p {
+  display: flex; /* Makes the <p> a flex container to align the icon */
+  justify-content: flex-end; /* Aligns the icon to the right */
+  flex-grow: 0; /* Prevents the paragraph from growing */
+  padding: 0; /* Optional padding */
+}
+
+/* Ensure the icon itself does not have any flex properties that might affect this layout */
+.nav-tools .icon-search {
+  padding-left: 20px;
+}
+
+.nav-tools .default-content-wrapper picture img {
+  width: 150px;
+  height: 40px;
+}
+
 /* hamburger */
 header nav .nav-hamburger {
   grid-area: hamburger;
@@ -166,174 +357,4 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
     display: none;
     visibility: hidden;
   }
-}
-
-/* brand */
-header .nav-brand {
-  grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
-  padding-top: 5px;
-}
-
-header nav .nav-brand img {
-  width: 160px;
-  height: auto;
-}
-
-/* sections */
-header nav .nav-sections {
-  grid-area: sections;
-  flex: 1 1 auto;
-  display: none;
-  visibility: hidden;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: white;
-  width: 100%;
-  z-index: 3;
-  font-family: brandon-bold, sans-serif;
-}
-
-header nav[aria-expanded="true"] .nav-sections {
-  display: block;
-  visibility: visible;
-  align-self: start;
-  width: 100%;
-}
-
-header nav .nav-sections ul {
-  list-style: none;
-  padding-left: 0;
-  font-size: var(--body-font-size-s);
-  font-weight: 500;
-}
-
-header nav .nav-sections ul > li {
-  font-weight: 700;
-}
-
-header nav .nav-sections ul > li > ul {
-  margin-top: 0;
-}
-
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 500;
-}
-
-/** NAVIGATION ITEMS UL LIST */
-header nav .nav-sections .default-content-wrapper > ul > li:last-child {
-  background-color: rgb(25, 25, 113); /* Example background color */
-  color: white;
-  padding: 5px;
-}
-
-@media (width >= 900px) {
-  header nav .nav-sections {
-    display: block;
-    visibility: visible;
-    white-space: nowrap;
-  }
-
-  header nav[aria-expanded="true"] .nav-sections {
-    align-self: unset;
-  }
-
-  /** For items that have a drop down **/
-  header nav .nav-sections .nav-drop {
-    position: relative;
-    padding-right: 16px;
-    cursor: pointer;
-  }
-
-  header nav .nav-sections .nav-drop::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 0.5em;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
-
-
-  header nav .nav-sections ul {
-    display: flex;
-    gap: 2em;
-    margin: 0;
-    font-size: var(--body-font-size-xs);
-  }
-
-  /** INDIVIDUAL NAV ITEMS */
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
-    font-weight: 500;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
-    display: none;
-    position: relative;
-  }
-
-  /** The actual block that is diplayed when clicked on nav item*/
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded="true"] > ul {
-    display: block;
-    position: absolute;
-    left: -1em;
-    width: 200px;
-    margin-top: 12px;
-    padding: 1em;
-    background-color: white;
-    white-space: initial;
-    font-family: brandon-normal, sans-serif;
-  }
-
-  /** Adds a solid line underneath the nav item when selected */
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded="true"] {
-    border-bottom: 3px solid black; /* Adjust color and thickness as needed */
-  }
-
-
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
-  }
-}
-
-/* tools */
-header nav .nav-tools {
-  grid-area: tools;
-  justify-self: end;
-  width: 50%;
-}
-
-.nav-tools .default-content-wrapper {
-  display: flex; /* Align children side by side */
-  justify-content: space-between; /* Space out the children */
-  align-items: center; /* Align children vertically in the middle */
-  width: 40%; /* Ensure the wrapper takes up the full width of its parent */
-}
-
-.nav-tools .default-content-wrapper > p {
-  display: flex; /* Makes the <p> a flex container to align the icon */
-  justify-content: flex-end; /* Aligns the icon to the right */
-  flex-grow: 0; /* Prevents the paragraph from growing */
-  padding: 0; /* Optional padding */
-}
-
-/* Ensure the icon itself does not have any flex properties that might affect this layout */
-.nav-tools .icon-search {
-  padding-left: 20px;
-}
-
-.nav-tools .default-content-wrapper picture img {
-  width: 150px;
-  height: 40px;
 }
