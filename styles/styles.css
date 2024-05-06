@@ -20,11 +20,12 @@
   --text-color: black;
 
   /* fonts */
-  --body-font-family: brandon, sans-serif;
+  --body-font-family: brandon-normal, sans-serif;
+  --header-font-family: brandon-bold, sans-serif;
 
-  --heading-font-family: var(--body-font-family);
-  --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono",
-    monospace;
+  --heading-font-family: var(--header-font-family);
+  /* --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono",
+    monospace; */
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -85,7 +86,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--heading-font-family);
+  font-family: var(--header-font-family);
   font-weight: 600;
   line-height: 1.25;
   margin-top: 1em;
@@ -120,6 +121,7 @@ pre,
 blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
+  font-family: var(--body-font-family);
 }
 
 code,
@@ -237,4 +239,54 @@ main .section {
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+}
+
+/* ----------When to use page------------ */
+.when-to-use-page-header {
+  text-align: center;
+  padding: 0 13rem;
+  h2 {
+    font-size: 2rem;
+    color: #211645;
+    font-weight: bold;
+  }
+}
+
+.three-cols {
+  padding: 0 3rem;
+}
+
+.three-cols > div {
+  align-items: flex-start;
+  h2 {
+    font-size: 1.8rem;
+    padding: 10px;
+    margin: 0;
+  }
+  p {
+    padding: 0 10px;
+    margin: 0;
+  }
+}
+
+.text-image {
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+
+.image-overlay-banner {
+  text-align: center;
+  padding: 3rem 20rem;
+  margin: 0 auto;
+  background: url(https://www.pedialyte.com/content/dam/an/pedialytecom/new-updates/image-2x/Pedialyte-container-background.png);
+  background-size: cover;
+
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
 }
