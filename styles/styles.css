@@ -318,3 +318,25 @@ main .section.highlight {
   }
 
 }
+.image-overlay-banner-designed-fast {
+  padding: 2rem 5rem;
+  height: 100%;
+  margin: 0 auto;
+  background: url(https://www.pedialyte.com/content/dam/an/pedialytecom/product-page-banner-964-x-245-desktop.png);
+  background-size: cover;
+  color: white;
+
+  div {
+    width: 100%;
+    text-align: end;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+
+}
+/**  **/
+
