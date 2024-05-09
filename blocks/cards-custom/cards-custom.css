@@ -6,6 +6,10 @@
   justify-items: center;
 }
 
+.cards-custom-container > .default-content-wrapper > h3 {
+  text-align: center;
+} 
+
 .card {
   display: flex;
   flex-direction: column;
