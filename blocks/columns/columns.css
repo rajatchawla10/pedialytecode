@@ -1,3 +1,6 @@
+@import url("../custom_styles/hydration_banner.css");
+@import url("../custom_styles/doctor_banner.css");
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -14,6 +17,7 @@
       transition: 0.3s;
     }
   }
+
 }
 
 .columns img {
@@ -23,6 +27,7 @@
 .columns > div > div {
   order: 1;
 }
+
 
 .columns > div > .columns-img-col {
   order: 0;

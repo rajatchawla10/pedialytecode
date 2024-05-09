@@ -1,0 +1,29 @@
+.hydration-banner > .columns-wrapper {
+    background-color: rgb(241, 241, 241);
+  }
+
+.hydration-banner > .columns-wrapper > .columns > div > div {
+    padding-left: 60px
+}
+
+.hydration-banner > .columns-wrapper > .columns > div > div > h2 {
+    font-size: 29pt;
+}
+
+.hydration-banner > .columns-wrapper > .columns > div > div > p {
+    font-size: 15pt;
+    width: 70%;
+}
+
+.hydration-banner > .columns-wrapper > .columns > div > div > .button-container > .button{
+    width: 200px;
+}
+
+.hydration-banner > .columns-wrapper > .columns > div > div > .button-container > a {
+    font-size: 15pt;
+    font-weight: lighter;
+}
+
+.hydration-banner > .columns-wrapper > .columns > div > .columns-img-col img {
+    width: 90%;
+  }

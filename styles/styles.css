@@ -27,6 +27,7 @@
   /* --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono",
     monospace; */
 
+
   /* body sizes */
   --body-font-size-m: 22px;
   --body-font-size-s: 18px;
@@ -215,6 +216,12 @@ main img {
 .icon img {
   height: 100%;
   width: 100%;
+}
+
+.small-print-notice {
+  color: gray;
+  font-family: brandon-normal, sans-serif;
+  font-size: small;
 }
 
 /* sections */
