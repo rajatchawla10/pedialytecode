@@ -299,6 +299,10 @@ main .section.highlight {
   }
 }
 
+.image-overlay-banner {
+  text-align: center;
+}
+
 .image-overlay-banner-rehydrate {
   padding: 2rem 5rem;
   height: 100%;
