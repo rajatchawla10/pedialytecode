@@ -231,7 +231,7 @@ main .section {
 
 @media (width >= 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 0px 32px;
   }
 }
 
@@ -283,7 +283,8 @@ main .section.highlight {
   }
 }
 
-.image-overlay-banner {
+/**Osman: replaced stretch-banner with  image-overlay-banner so it can stretch and is outside the column wrapper**/
+.stretch-banner  {
   text-align: center;
   padding: 3rem 20rem;
   margin: 0 auto;
@@ -296,4 +297,24 @@ main .section.highlight {
   p {
     font-size: 1.2rem;
   }
+}
+
+.image-overlay-banner-rehydrate {
+  padding: 2rem 5rem;
+  height: 100%;
+  margin: 0 auto;
+  background: url(https://www.pedialyte.com/content/dam/an/pedialytecom/new-updates/image-2x/PDL_23_0301301_img_Hero_Desktop_1200x500@2x.jpg);
+  background-size: cover;
+  color: white;
+
+  div {
+    width: 50%;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+
 }
