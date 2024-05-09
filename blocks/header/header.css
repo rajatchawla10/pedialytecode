@@ -32,7 +32,7 @@ header nav[aria-expanded="true"] {
   gap: 0 2em;
   margin: auto;
   width: 75%;
-  height: var(--nav-height);
+  height: 73px;
   padding: 0 1rem;
   font-family: var(--body-font-family);
   overflow-y: auto;
@@ -52,7 +52,7 @@ header nav[aria-expanded="true"]::after {
   transform: translateX(
     -50%
   ); /* Aligns the center of the element with the center of the nav */
-  bottom: -49px; /* Position the line just below the nav */
+  bottom: -50px; /* Position the line just below the nav */
   border-top: 1px solid darkblue;
   background-color: white; /* Set the background color to white */
   box-shadow: 0 8px 10px rgb(0 0 0 / 10%); /* Add a subtle blur shadow below */
@@ -95,7 +95,7 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
-  padding-top: 5px;
+  padding-bottom: 15px;
 }
 
 header nav .nav-brand img {
