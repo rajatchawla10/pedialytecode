@@ -27,7 +27,6 @@
   /* --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono",
     monospace; */
 
-
   /* body sizes */
   --body-font-size-m: 22px;
   --body-font-size-s: 18px;
@@ -284,7 +283,7 @@ main .section.highlight {
 }
 
 /**Osman: replaced stretch-banner with  image-overlay-banner so it can stretch and is outside the column wrapper**/
-.stretch-banner  {
+.stretch-banner {
   text-align: center;
   padding: 3rem 20rem;
   margin: 0 auto;
@@ -327,7 +326,33 @@ main .section.highlight {
   p {
     font-size: 1.2rem;
   }
+}
 
+.bg-lightblue {
+  background-color: #eff9fd;
+}
+
+.cards-product-container {
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #211645;
+    font-weight: bold;
+  }
+  .default-content-wrapper {
+    .button-container {
+      text-align: center;
+    }
+    a {
+      background-color: #211645;
+
+      transition: 0.3s;
+      &:hover {
+        box-shadow: 0 1px 12px rgba(0, 0, 0, 0.662642);
+        transition: 0.3s;
+      }
+    }
+  }
 }
 
 .hydrate {
