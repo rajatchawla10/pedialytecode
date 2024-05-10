@@ -303,24 +303,35 @@ main .section.highlight {
   text-align: center;
 }
 
-.image-overlay-banner-rehydrate {
+
+
+.image-overlay-banner-hydrate {
   padding: 2rem 5rem;
   height: 100%;
+  width:100%;
   margin: 0 auto;
-  background: url(https://www.pedialyte.com/content/dam/an/pedialytecom/new-updates/image-2x/PDL_23_0301301_img_Hero_Desktop_1200x500@2x.jpg);
+  background: url(https://www.pedialyte.com/content/dam/an/pedialytecom/new-updates/when-to-use/PDL_23_0413301_img_pedialyte-whentouse-hero-girldrinking-strawberrylemonade.png);
   background-size: cover;
   color: white;
 
   div {
     width: 50%;
+    padding-bottom: 20px;
   }
+
   h2 {
-    font-size: 3rem;
+    font-size: 6rem;
+    text-align: center;
   }
+
   p {
     font-size: 1.2rem;
   }
 
+}
+
+.hydrate {
+  margin-top: 60px;
 }
 .image-overlay-banner-designed-fast {
   padding: 2rem 5rem;
