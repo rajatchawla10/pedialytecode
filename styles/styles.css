@@ -311,15 +311,16 @@ main .section.highlight {
   color: white;
 
   div {
-    width: 50%;;
+    width: 80%;
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   p {
     font-size: 1.2rem;
+    width: 70%;
   }
 }
 
@@ -327,7 +328,6 @@ main .section.highlight {
 .image-overlay-banner-whentouse {
   padding: 2rem 5rem;
   height: 100%;
-  width:100%;
   margin: 0 auto;
   background: url(https://www.pedialyte.com/content/dam/an/pedialytecom/new-updates/when-to-use/PDL_23_0413301_img_pedialyte-whentouse-hero-girldrinking-strawberrylemonade.png);
   background-size: cover;
@@ -347,6 +347,12 @@ main .section.highlight {
     font-size: 1.2rem;
   }
 }
+
+.hydrate {
+  margin-top: 60px;
+}
+
+
 
 .bg-lightblue {
   background-color: #eff9fd;
@@ -375,16 +381,14 @@ main .section.highlight {
   }
 }
 
-.hydrate {
-  margin-top: 60px;
-}
+
 .image-overlay-banner-designed-fast {
   padding: 2rem 5rem;
   height: 100%;
   margin: 0 auto;
-  background: url(https://www.pedialyte.com/content/dam/an/pedialytecom/product-page-banner-964-x-245-desktop.png);
   background-size: cover;
   color: white;
+  position: relative;
 
   div {
     width: 100%;
@@ -399,8 +403,18 @@ main .section.highlight {
 
 }
 
+
+.image-overlay-banner-designed-fast > div > .columns-img-col {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1; /* Ensure it is behind the content */
+}
+
 .designed-fast {
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 /**  **/
 
