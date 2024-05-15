@@ -7,7 +7,6 @@ export default function decorate(block) {
     const innerDiv = document.createElement("div");
     innerDiv.className = "product-details-card";
     while (row.firstElementChild) innerDiv.append(row.firstElementChild);
-    console.log("PARTH", row);
     [...innerDiv.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector("picture"))
         div.className = "product-details-card-image";
