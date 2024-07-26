@@ -1,0 +1,6 @@
+{
+    "copyMode": [{
+        "mimeType": "image/*",
+        "value": "reference"
+    }]	
+}
