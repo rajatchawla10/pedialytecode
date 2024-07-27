@@ -9,7 +9,7 @@
         "isPalette": true,
         "includePaths": [ "**.docx**" ],
         "passConfig": true,
-        "paletteRect": "top: 50px; bottom: 10px; right: 10px; left: auto; width:800px; height: calc(100vh - 60px)"
+        "paletteRect": "top: 50px; bottom: 10px; right: 10px; left: auto; width:300px; height: calc(100vh - 60px)"
     }
     ]
 }
