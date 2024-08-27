@@ -418,3 +418,54 @@ main .section.highlight {
 }
 /**  **/
 
+
+.our-companies > div {
+  display: flex;
+}
+
+.our-companies h2 {
+  color: rgb(83, 170, 200);
+}
+
+.our-companies p {
+  width: 80%;
+}
+
+.our-companies > div .button-container a.button { 
+  display: inline-block;
+  color: #53AAC8; /* Light blue color for the text */
+  background-color: white; /* White background */
+  border: 2px solid #53AAC8; /* Light blue border */
+  border-radius: 5px; /* Rounded borders, adjust the value for more/less rounding */
+  padding: 10px 20px; /* Padding inside the button */
+  font-weight: bold; /* Make the text bold */
+  font-size: 16px; /* Font size */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline from links */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.our-companies > div .button-container a.button:hover {   
+  color: #767676; /* Light grey color on hover */
+  border: 2px solid #767676; /* Light blue border */
+}
+
+
+.logos {
+  display: flex;
+}
+
+.logos > div p {
+  font-size: large;
+  width: 80%;
+}
+
+.logos > div {
+  width: 60%;
+}
+
+
+.logos img {
+  width: 200px;
+}

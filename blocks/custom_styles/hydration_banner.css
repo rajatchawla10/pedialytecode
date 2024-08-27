@@ -1,5 +1,6 @@
 .hydration-banner > .columns-wrapper {
-    background-color: rgb(241, 241, 241);
+    background-color: red;
+    
   }
 
 .hydration-banner > .columns-wrapper > .columns > div > div {
